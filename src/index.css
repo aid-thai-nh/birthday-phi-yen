@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-script: 'Great Vibes', cursive;
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Nunito', sans-serif;
+
+  --color-background: hsl(340 100% 98%);
+  --color-foreground: hsl(340 40% 25%);
+  --color-border: hsl(340 60% 90%);
+  --color-input: hsl(340 60% 90%);
+  --color-ring: hsl(338 78% 65%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(340 40% 25%);
+  
+  --color-primary: hsl(338 78% 60%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  
+  --color-secondary: hsl(340 100% 95%);
+  --color-secondary-foreground: hsl(338 78% 40%);
+  
+  --color-muted: hsl(340 30% 96%);
+  --color-muted-foreground: hsl(340 20% 50%);
+  
+  --color-accent: hsl(338 80% 75%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+:root {
+  --background: 340 100% 98%;
+  --foreground: 340 40% 25%;
+  --primary: 338 78% 60%;
+  --primary-foreground: 0 0% 100%;
+  --card: 0 0% 100%;
+  --card-foreground: 340 40% 25%;
+  --border: 340 60% 90%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-pink-200 selection:text-pink-900;
+    background-image: radial-gradient(at top left, hsl(340 100% 98%), hsl(340 100% 96%), hsl(0 0% 100%));
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-primary;
+  }
+}
+
+/* Sparkle Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass-card {
+  @apply bg-white/60 backdrop-blur-md border border-white/50 shadow-xl shadow-pink-500/10;
+}
